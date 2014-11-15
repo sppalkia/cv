@@ -1,0 +1,156 @@
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+% possible options include font size ('10pt', '11pt' and '12pt'), paper size
+% ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and
+% 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,letterpaper,sans]{moderncv}
+\usepackage{xspace}
+\newcommand\eat[1]{}
+
+%\newcommand{\ie}{{\it i.e.,}\xspace}
+
+% moderncv themes style options are 'casual' (default), 'classic', 'oldstyle'
+% and 'banking'
+\moderncvstyle{classic}
+
+% color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey'
+% and 'black'
+\moderncvcolor{orange}
+
+% to set the default font; use '\sfdefault' for the default sans serif font,
+% '\rmdefault' for the default roman one, or any tex font name
+%\renewcommand{\familydefault}{\sfdefault}         
+
+% Uncomment for no page numbers
+%\nopagenumbers{}                                  
+
+% character encoding: if you are not using xelatex ou lualatex, replace by the
+% encoding you are using
+%\usepackage[utf8]{inputenc}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+% if you want to change the width of the column with the dates
+%\setlength{\hintscolumnwidth}{3cm}
+
+% for the 'classic' style, if you want to force the width allocated to your
+% name and avoid line breaks. be careful though, the length is normally
+% calculated to avoid any overlap with your personal info; use this at your own
+% typographical risks...
+%\setlength{\makecvtitlenamewidth}{10cm}
+
+% personal data
+\name{Shoumik}{Palkar}
+\title{Curriculum Vitae}
+\address{1731 Calgary Dr.}{Sunnyvale, CA 94087}
+\phone[mobile]{+1~(408)~505~6159}
+\email{shoumikpalkar@gmail.com}
+%\renewcommand*\httplink[2][]{{\urlstyle{sf}\expandafter\href#2}}
+%\homepage{{https://www.cs.berkeley.edu/~apanda/}{www.cs.berkeley.edu/{\textasciitilde}apanda}}
+
+% optional, remove / comment the lines if not wanted
+%\social[linkedin]{john.doe}
+%\social[twitter]{jdoe}
+%\social[github]{jdoe}
+%\extrainfo{additional information}
+
+%'64pt' is the height the picture must be resized to, 0.4pt is the thickness of
+%the frame around it (put it to 0pt for no frame) and 'picture' is the name of
+%the picture file
+%\photo[64pt][0.4pt]{picture}
+%\quote{Some quote}
+
+% to show numerical labels in the bibliography (default is to show no labels);
+% only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+
+% bibliography with mutiple entries
+\usepackage{multibib}
+\newcites{conference,workshop,demos,trs}{{Conferences},{Workshops},{Demos},{Technical Reports}}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+
+\begin{document}
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\section{Research Interests}
+Distributed systems, networking, big data
+
+\section{Education}
+\cventry{2011--present}{B.S. El. Eng. and Computer Science \emph{(expected)}}
+{UC Berkeley}{Berkeley, CA}{}{}
+
+\section{Research} \cvlistitem {\textbf{Elastic Switch}: Lorem ipsum dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+officia deserunt mollit anim id est laborum.}
+
+\cvlistitem {\textbf{SoftNIC}: Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+id est laborum.}
+
+\cvlistitem {\textbf{SDNv2}: Lorem ipsum dolor sit amet, consectetur adipiscing
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum.}
+
+\section{Teaching Experience}
+\cventry{\hspace{2em}\ \ Fall '14}{TA for CS 168 (Undergraduate Networking)}{UC Berkeley}{Berkeley, CA}{} {
+\begin{itemize}
+\item Taught about 50 students in a weekly discussion section.
+\item Designed problem sets and projects, co-managed a project involving
+building an L7 firewall.
+\end{itemize}
+}
+
+\section{Industry Experience}
+\cventry{Summer 2013}{SDE Intern}{VMware Inc.}{Palo Alto, CA}{}{
+\begin{itemize}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+\end{itemize}
+}
+\cventry{Summer 2012}{Software Engineering Intern}{Cooliris Inc.}{Palo Alto, CA}{}{
+\begin{itemize}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+\end{itemize}
+}
+
+\section{Publications}
+\nociteconference{*}
+\bibliographystyleconference{plainyr-rev}
+\bibliographyconference{conference}
+
+\nocitetrs{*}
+\bibliographystyletrs{plainyr-rev}
+\bibliographytrs{tr}
+
+\section{References}
+Available on request
+\end{document}
