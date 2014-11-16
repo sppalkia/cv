@@ -88,57 +88,70 @@
 Distributed systems, networking, big data
 
 \section{Education}
-\cventry{2011--present}{B.S. El. Eng. and Computer Science \emph{(expected)}}
+\cventry{2011--2014}{B.S. El. Eng. and Computer Science \emph{(expected)}}
 {UC Berkeley}{Berkeley, CA}{}{}
 
-\section{Research} \cvlistitem {\textbf{Elastic Switch}: Lorem ipsum dolor sit
-amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-officia deserunt mollit anim id est laborum.}
+\section{Research}
+\cvlistitem {\textbf{Elastic Switch}: NFV promises to ease the management of
+complex yet ubiquitous middleboxes in today's networks.  Unfortunately, the
+current trend in NFV seems to be replacing monolithic hardware appliances with
+monolithic software; at best, each vendor ships an entire stack responsible for
+scaling, fault-tolerance, load balancing, and so on. Elastic Switch is a
+\emph{framework} for NFV, intended to provide a common set of abstractions on
+NFV applications may be deployed. The system automatically scales applications,
+load balances between replicas, exposes mechanisms for composing applications,
+and provies other powerful abstractions.}
 
-\cvlistitem {\textbf{SoftNIC}: Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-id est laborum.}
+\cvlistitem {\textbf{SoftNIC}: Network Interfaces Cards are growing
+increasingly complex, as more and more features are implemented in hardware.
+Vendors cannot possibly continue to implement every feature users desire; such
+rapid innovation can only occur in software. To this end, SoftNIC is a system
+that advocates pushing complex NIC functionality into software, while
+opportunistically offloading packet processing to the hardware based on the
+resources available. SoftNIC runs on a set of dedicated CPU cores and comes
+with a programmable pipeline, allowing full flexibility with regards to the
+functions it can perform, and scales to support cutting edge 40 and 100 Gbps
+line rates.}
 
-\cvlistitem {\textbf{SDNv2}: Lorem ipsum dolor sit amet, consectetur adipiscing
-elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-laborum.}
+\cvlistitem {\textbf{SDNv2}: 
+The rise of NFV and other similar technologies has meant that general purpose
+computers are increasingly available at the network edge. SDNv2 is  a new
+internet architecture that allowed ISPs to leverage these computers to provide
+increased flexibility to the customers. }
 
 \section{Teaching Experience}
 \cventry{\hspace{2em}\ \ Fall '14}{TA for CS 168 (Undergraduate Networking)}{UC Berkeley}{Berkeley, CA}{} {
 \begin{itemize}
 \item Taught about 50 students in a weekly discussion section.
-\item Designed problem sets and projects, co-managed a project involving
-building an L7 firewall.
+\item Designed problem sets, graded exams, and co-managed two project involving
+building an application-layer firewall in Python.
 \end{itemize}
 }
 
-\section{Industry Experience}
-\cventry{Summer 2013}{SDE Intern}{VMware Inc.}{Palo Alto, CA}{}{
+\section{Professional Experience}
+
+\cventry{Summer 2013}{SDE Intern}{VMware Inc.}{Palo Alto, CA}{} {
 \begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.
+\item Developed and tested a distributed Identity Based Firewall in the VMware
+ESX hypervisor kernel.
+\item The firewall accepts rules based on Windows SID (acquired by scraping
+Activity Directory logs), and filters connections based on identity
+$\rightarrow$ connection mappings.
 \end{itemize}
 }
-\cventry{Summer 2012}{Software Engineering Intern}{Cooliris Inc.}{Palo Alto, CA}{}{
-\begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.
+
+\cventry{Winter 2013}{Mobile Application Developer}{El Camino Hospital}{Mountain View, CA}{}{
+\begin{itemize} 
+\item Developed an iOS application for El Camino Hospital's South Asian Heart
+Center, to coordinate a raffle at an event. Integrated Amazon SimpleDB and
+Facebook Graph APIs.
+\end{itemize}
+}
+
+\cventry{Summer 2012}{Software Engineering Intern}{Cooliris Inc.}{Palo Alto, CA}{} {
+\begin{itemize} 
+\item Designed and developed \emph{HashGallery}, an iOS client for Instagram,
+Twitter, and Flickr image-search.
 \end{itemize}
 }
 
