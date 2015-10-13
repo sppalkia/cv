@@ -19,7 +19,7 @@
 
 % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey'
 % and 'black'
-\moderncvcolor{orange}
+\moderncvcolor{blue}
 
 % to set the default font; use '\sfdefault' for the default sans serif font,
 % '\rmdefault' for the default roman one, or any tex font name
@@ -47,9 +47,11 @@
 % personal data
 \name{Shoumik}{Palkar}
 \title{Curriculum Vitae}
-\address{1731 Calgary Dr.}{Sunnyvale, CA 94087}
+% For stanford
+%\title{Applying to the Computer Science Dept.}
+\address{239 Albany St. Apt. 2104A}{Cambridge, MA 02139}
 \phone[mobile]{+1~(408)~505~6159}
-\email{shoumikpalkar@gmail.com}
+\email{shoumik@mit.edu}
 %\renewcommand*\httplink[2][]{{\urlstyle{sf}\expandafter\href#2}}
 %\homepage{{https://www.cs.berkeley.edu/~apanda/}{www.cs.berkeley.edu/{\textasciitilde}apanda}}
 
@@ -85,73 +87,79 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 \section{Research Interests}
-Distributed systems, networking, big data
+Computer systems, big data, networking
 
 \section{Education}
-\cventry{2011--2014}{B.S. El. Eng. and Computer Science \emph{(expected)}}
-{UC Berkeley}{Berkeley, CA}{}{}
+\cventry{2015--Present}{PhD Candidate}{Computer Science}
+{Massachusetts Institute of Technology}{Cambridge, MA}{}{}
 
-\section{Research}
-\cvlistitem {\textbf{Elastic Switch}: NFV promises to ease the management of
-complex yet ubiquitous middleboxes in today's networks.  Unfortunately, the
-current trend in NFV seems to be replacing monolithic hardware appliances with
-monolithic software; at best, each vendor ships an entire stack responsible for
-scaling, fault-tolerance, load balancing, and so on. Elastic Switch is a
-\emph{framework} for NFV, intended to provide a common set of abstractions on
-NFV applications may be deployed. The system automatically scales applications,
-load balances between replicas, exposes mechanisms for composing applications,
-and provies other powerful abstractions.}
+\cventry{2011--2014}{Bachelor of Science}{Computer Science and Engineering}
+{University of California at Berkeley}{Berkeley, CA}{}{}
 
-\cvlistitem {\textbf{SoftNIC}: Network Interfaces Cards are growing
-increasingly complex, as more and more features are implemented in hardware.
-Vendors cannot possibly continue to implement every feature users desire; such
-rapid innovation can only occur in software. To this end, SoftNIC is a system
-that advocates pushing complex NIC functionality into software, while
-opportunistically offloading packet processing to the hardware based on the
-resources available. SoftNIC runs on a set of dedicated CPU cores and comes
-with a programmable pipeline, allowing full flexibility with regards to the
-functions it can perform, and scales to support cutting edge 40 and 100 Gbps
-line rates.}
+\section{Research Projects}
+\subsection{E2: An Framework for Network Functions Virtualization.}
+\cvitem {}
+{
+    \textbf{Shoumik Palkar}, Chang Lan, Sangjin Han, Keon Jang, Aurojit Panda, Sylvia Ratnasamy,
+    Luigi Rizzo, and Scott Shenker.
+    \begin{itemize}
+        \item E2 is a system that provides a framework for NFV, responsible for dynamic scaling
+        of network functions (NFs), load balancing traffic between nodes, and orchestrating
+        service composition given a network policy. E2 manages a hardware cluster composed of a
+        commodity switching ASIC and a rack of x86 servers.
+    \end{itemize}
+}
 
-\cvlistitem {\textbf{SDNv2}: 
-The rise of NFV and other similar technologies has meant that general purpose
-computers are increasingly available at the network edge. SDNv2 is  a new
-internet architecture that allowed ISPs to leverage these computers to provide
-increased flexibility to the customers. }
+    \subsection{SoftNIC: A Software NIC to Augment Hardware}
+    \cvitem{}
+    {
+        Sangjin Han, Keon Jang, Aurojit Panda, \textbf{Shoumik Palkar}, Dongsu Han, and Sylvia Ratnasamy.
+        \begin{itemize}
+            \item SoftNIC is a system built to perform complex Network Interface Card functionality in
+            software with a programmable pipeline, at 40 and 100 Gbps rates, while offloading
+            computation to the NIC hardware opportunistically:w
+        \end{itemize}
+    }
+
+    \subsection{SDNv2}
+    \cvitem{} 
+    {
+        Murphy McCauley et al.
+        \begin{itemize}
+            \item SDNv2 is a proposed internet architecture that allows ISPs to leverage commodity CPUs
+            at the network edge for greater flexibility in deploying network services.
+        \end{itemize}
+    }
 
 \section{Teaching Experience}
-\cventry{\hspace{2em}\ \ Fall '14}{TA for CS 168 (Undergraduate Networking)}{UC Berkeley}{Berkeley, CA}{} {
+\cventry{\hspace{2em}\ \ Fall 2014}{TA for CS 168 (Undergraduate Networking)}{UC Berkeley}{Berkeley, CA}{} {
 \begin{itemize}
 \item Taught about 50 students in a weekly discussion section.
-\item Designed problem sets, graded exams, and co-managed two project involving
+\item Designed problem sets, graded exams, and co-managed two projects involving
 building an application-layer firewall in Python.
 \end{itemize}
 }
 
-\section{Professional Experience}
+\section{Industry Experience}
 
 \cventry{Summer 2013}{SDE Intern}{VMware Inc.}{Palo Alto, CA}{} {
 \begin{itemize}
-\item Developed and tested a distributed Identity Based Firewall in the VMware
+\item Developed and tested a distributed L7 Firewall in the VMware
 ESX hypervisor kernel.
-\item The firewall accepts rules based on Windows SID (acquired by scraping
-Activity Directory logs), and filters connections based on identity
-$\rightarrow$ connection mappings.
 \end{itemize}
 }
 
 \cventry{Winter 2013}{Mobile Application Developer}{El Camino Hospital}{Mountain View, CA}{}{
 \begin{itemize} 
-\item Developed an iOS application for El Camino Hospital's South Asian Heart
-Center, to coordinate a raffle at an event. Integrated Amazon SimpleDB and
-Facebook Graph APIs.
+\item Developed an iOS application for to coordinate a raffle at an event.
+Integrated Amazon SimpleDB and Facebook Graph APIs.
 \end{itemize}
 }
 
 \cventry{Summer 2012}{Software Engineering Intern}{Cooliris Inc.}{Palo Alto, CA}{} {
 \begin{itemize} 
 \item Designed and developed \emph{HashGallery}, an iOS client for Instagram,
-Twitter, and Flickr image-search.
+Twitter, and Flickr image search.
 \end{itemize}
 }
 
@@ -165,5 +173,5 @@ Twitter, and Flickr image-search.
 \bibliographytrs{tr}
 
 \section{References}
-Available on request
+
 \end{document}
