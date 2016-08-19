@@ -47,11 +47,9 @@
 % personal data
 \name{Shoumik}{Palkar}
 \title{Curriculum Vitae}
-% For stanford
-%\title{Applying to the Computer Science Dept.}
-\address{239 Albany St. Apt. 2104A}{Cambridge, MA 02139}
+\address{21104 Tulita Ct.}{Cupertino, CA 95014}
 \phone[mobile]{+1~(408)~505~6159}
-\email{shoumik@mit.edu}
+\email{shoumik@cs.stanford.edu}
 %\renewcommand*\httplink[2][]{{\urlstyle{sf}\expandafter\href#2}}
 %\homepage{{https://www.cs.berkeley.edu/~apanda/}{www.cs.berkeley.edu/{\textasciitilde}apanda}}
 
@@ -90,14 +88,39 @@
 Computer systems, big data, networking
 
 \section{Education}
-\cventry{2015--Present}{PhD Candidate}{Computer Science}
-{Massachusetts Institute of Technology}{Cambridge, MA}{}{}
+\cventry{2016--Present}{PhD Candidate}{Computer Science}
+{Stanford University}{Stanford, CA}{
+\emph{Advisor: Prof. Matei Zaharia.}
+}{}
+
+\cventry{2015--2016}{PhD Candidate}{Computer Science}
+{Massachusetts Institute of Technology}{Cambridge, MA}{
+\emph{Advisor: Prof. Matei Zaharia.} \\
+\textbf{\emph{Transferred to Stanford University in Fall 2016 with advisor.}}
+}{}
 
 \cventry{2011--2014}{Bachelor of Science}{Computer Science and Engineering}
-{University of California at Berkeley}{Berkeley, CA}{}{}
+{University of California at Berkeley}{Berkeley, CA}{
+\emph{Advisors: Profs. Scott Shenker and Sylvia Ratnasamy.}
+}{}
 
 \section{Research Projects}
-\subsection{E2: An Framework for Network Functions Virtualization.}
+
+\subsection{NVL: An Intermediate Language for Data Parallelism}
+\cvitem {}
+{
+    \textbf{Shoumik Palkar}, James Thomas, Malte Schwarzkopf, Anil Shanbhag, and Matei Zaharia.
+    \begin{itemize}
+      \item NVL is an intermediate language for data parallel programs. Writing fast, efficient
+      parallel code is growing increasingly difficult as hardware becomes more complex,
+      while frameworks like MapReduce and Spark have shown that many common workloads are expressable
+      using only functional, parallel APIs. NVL exposes a small set of parallel primitives that can
+      express many of these existing workloads, performs programmatic transformations to optimize
+      their execution, and generates high performance machine code for a variety of backends.
+    \end{itemize}
+}
+
+\subsection{E2: A Framework for Network Functions Virtualization.}
 \cvitem {}
 {
     \textbf{Shoumik Palkar}, Chang Lan, Sangjin Han, Keon Jang, Aurojit Panda, Sylvia Ratnasamy,
@@ -110,26 +133,26 @@ Computer systems, big data, networking
     \end{itemize}
 }
 
-    \subsection{SoftNIC: A Software NIC to Augment Hardware}
-    \cvitem{}
-    {
-        Sangjin Han, Keon Jang, Aurojit Panda, \textbf{Shoumik Palkar}, Dongsu Han, and Sylvia Ratnasamy.
-        \begin{itemize}
-            \item SoftNIC is a system built to perform complex Network Interface Card functionality in
-            software with a programmable pipeline, at 40 and 100 Gbps rates, while offloading
-            computation to the NIC hardware opportunistically:w
-        \end{itemize}
-    }
+\subsection{SoftNIC: A Software NIC to Augment Hardware}
+\cvitem{}
+{
+    Sangjin Han, Keon Jang, Aurojit Panda, \textbf{Shoumik Palkar}, Dongsu Han, and Sylvia Ratnasamy.
+    \begin{itemize}
+        \item SoftNIC is a system built to perform complex Network Interface Card functionality in
+        software with a programmable pipeline, at 40 and 100 Gbps rates, while offloading
+        computation to the NIC hardware opportunistically.
+    \end{itemize}
+}
 
-    \subsection{SDNv2}
-    \cvitem{} 
-    {
-        Murphy McCauley et al.
-        \begin{itemize}
-            \item SDNv2 is a proposed internet architecture that allows ISPs to leverage commodity CPUs
-            at the network edge for greater flexibility in deploying network services.
-        \end{itemize}
-    }
+\subsection{SDNv2}
+\cvitem{} 
+{
+    Murphy McCauley et al.
+    \begin{itemize}
+        \item SDNv2 is a proposed internet architecture that allows ISPs to leverage commodity CPUs
+        at the network edge for greater flexibility in deploying network services.
+    \end{itemize}
+}
 
 \section{Teaching Experience}
 \cventry{\hspace{2em}\ \ Fall 2014}{TA for CS 168 (Undergraduate Networking)}{UC Berkeley}{Berkeley, CA}{} {
@@ -140,7 +163,21 @@ building an application-layer firewall in Python.
 \end{itemize}
 }
 
-\section{Industry Experience}
+\section{Professional Experience}
+
+\cventry{Summer 2016}{SWE Intern}{Google Inc.}{Mountain View, CA}{} {
+\begin{itemize}
+\item Studied and implemented several Conflict-Free Replicated Data Types
+(CRDTs) on top of a P2P database called Syncbase.
+\end{itemize}
+}
+
+\cventry{Summer 2014}{Undergraduate Researcher}{International Computer Science Institute}{Berkeley, CA}{} {
+\begin{itemize}
+\item Designed and implemented E2, a framework for effiently managing and deploying a NFV cluster
+on commodity hardware.
+\end{itemize}
+}
 
 \cventry{Summer 2013}{SDE Intern}{VMware Inc.}{Palo Alto, CA}{} {
 \begin{itemize}
@@ -163,6 +200,10 @@ Twitter, and Flickr image search.
 \end{itemize}
 }
 
+\section{Honors and Awards}
+\cventry{2016}{NSF GRFP Honorable Mention}{}{}{} {}
+\cventry{2015--2016}{Jacobs Presedential Fellowship}{}{}{} {}
+
 \section{Publications}
 \nociteconference{*}
 \bibliographystyleconference{plainyr-rev}
@@ -173,5 +214,6 @@ Twitter, and Flickr image search.
 \bibliographytrs{tr}
 
 \section{References}
+Available upon request.
 
 \end{document}
