@@ -7,7 +7,7 @@
 % possible options include font size ('10pt', '11pt' and '12pt'), paper size
 % ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and
 % 'landscape') and font family ('sans' and 'roman')
-\documentclass[11pt,letterpaper,sans]{moderncv}
+\documentclass[10pt,letterpaper,sans]{moderncv}
 \usepackage{xspace}
 \newcommand\eat[1]{}
 
@@ -15,11 +15,11 @@
 
 % moderncv themes style options are 'casual' (default), 'classic', 'oldstyle'
 % and 'banking'
-\moderncvstyle{classic}
+\moderncvstyle{banking}
 
 % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey'
 % and 'black'
-\moderncvcolor{red}
+\moderncvcolor{blue}
 
 % to set the default font; use '\sfdefault' for the default sans serif font,
 % '\rmdefault' for the default roman one, or any tex font name
@@ -30,10 +30,57 @@
 
 % character encoding: if you are not using xelatex ou lualatex, replace by the
 % encoding you are using
-%\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 
 % adjust the page margins
 \usepackage[scale=0.75]{geometry}
+
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[0.75em]{}{%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}%
+    }%
+}
+
+% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
+% Everything but the name is optional
+% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
+% (Per default, \addresssymbol isn't specified, the other two are specified.)
+% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbullet}
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{}%
+           {\leftmargin0pt
+            \@openbib@code
+            \usecounter{enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
+%\usepackage{multibib}
+%\newcites{conference,workshop,demos,trs}{{Conferences},{Workshops},{Demos},{Technical Reports}}
 
 % if you want to change the width of the column with the dates
 %\setlength{\hintscolumnwidth}{3cm}
@@ -47,16 +94,15 @@
 % personal data
 \name{Shoumik}{Palkar}
 \title{Curriculum Vitae}
-\address{21104 Tulita Ct.}{Cupertino, CA 95014}
 \phone[mobile]{+1~(408)~505~6159}
 \email{shoumik@cs.stanford.edu}
 %\renewcommand*\httplink[2][]{{\urlstyle{sf}\expandafter\href#2}}
-%\homepage{{https://www.cs.berkeley.edu/~apanda/}{www.cs.berkeley.edu/{\textasciitilde}apanda}}
+\homepage{{https://www.shoumik.xyz}{}}
 
 % optional, remove / comment the lines if not wanted
 %\social[linkedin]{john.doe}
-%\social[twitter]{jdoe}
-%\social[github]{jdoe}
+\social[twitter]{sppalkia}
+\social[github]{sppalkia}
 %\extrainfo{additional information}
 
 %'64pt' is the height the picture must be resized to, 0.4pt is the thickness of
@@ -74,8 +120,8 @@
 \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
 
 % bibliography with mutiple entries
-\usepackage{multibib}
-\newcites{conference,workshop,demos,trs}{{Conferences},{Workshops},{Demos},{Technical Reports}}
+%\usepackage{multibib}
+%\newcites{conference,workshop,demos,trs}{{Conferences},{Workshops},{Demos},{Technical Reports}}
 
 %----------------------------------------------------------------------------------
 %            content
@@ -93,6 +139,11 @@ Computer systems, big data, networking
 \emph{Advisor: Prof. Matei Zaharia.}
 }{}
 
+\cventry{2016--2018}{Master of Science}{Computer Science}
+{Stanford University}{Stanford, CA}{
+\emph{Advisor: Prof. Matei Zaharia.}
+}{}
+
 \cventry{2015--2016}{PhD Candidate}{Computer Science}
 {Massachusetts Institute of Technology}{Cambridge, MA}{
 \emph{Advisor: Prof. Matei Zaharia.} \\
@@ -104,69 +155,40 @@ Computer systems, big data, networking
 \emph{Advisors: Profs. Scott Shenker and Sylvia Ratnasamy.}
 }{}
 
-\section{Research Projects}
-
-\subsection{Weld: A Common Runtime for High Performance Data Analytics}
-\cvitem {}
-{
-    \textbf{Shoumik Palkar}, James Thomas, Anil Shanbhag, Deepak Narayanan, Malte Schwarzkopf, Anil Shanbhag, Holger Pirk, Saman Amarasinghe, Sam Madden, and Matei Zaharia.
-    \begin{itemize}
-      \item Weld is an intermediate language for data parallel programs. Writing fast, efficient
-      parallel code is growing increasingly difficult as hardware becomes more complex,
-      while frameworks like MapReduce and Spark have shown that many common workloads are expressable
-      using only functional, parallel APIs. Weld exposes a small set of parallel primitives that can
-      express many of these existing workloads, performs programmatic transformations to optimize
-      their execution, and generates high performance machine code for a variety of backends.
-    \end{itemize}
-}
-
-\subsection{E2: A Framework for Network Functions Virtualization.}
-\cvitem {}
-{
-    \textbf{Shoumik Palkar}, Chang Lan, Sangjin Han, Keon Jang, Aurojit Panda, Sylvia Ratnasamy,
-    Luigi Rizzo, and Scott Shenker.
-    \begin{itemize}
-        \item E2 is a system that provides a framework for NFV, responsible for dynamic scaling
-        of network functions (NFs), load balancing traffic between nodes, and orchestrating
-        service composition given a network policy. E2 manages a hardware cluster composed of a
-        commodity switching ASIC and a rack of x86 servers.
-    \end{itemize}
-}
-
-\subsection{SoftNIC: A Software NIC to Augment Hardware}
-\cvitem{}
-{
-    Sangjin Han, Keon Jang, Aurojit Panda, \textbf{Shoumik Palkar}, Dongsu Han, and Sylvia Ratnasamy.
-    \begin{itemize}
-        \item SoftNIC is a system built to perform complex Network Interface Card functionality in
-        software with a programmable pipeline, at 40 and 100 Gbps rates, while offloading
-        computation to the NIC hardware opportunistically.
-    \end{itemize}
-}
-
-\subsection{SDNv2}
-\cvitem{} 
-{
-    Murphy McCauley et al.
-    \begin{itemize}
-        \item SDNv2 is a proposed internet architecture that allows ISPs to leverage commodity CPUs
-        at the network edge for greater flexibility in deploying network services.
-    \end{itemize}
-}
-
 \section{Teaching Experience}
 
-\cventry{\hspace{2em}\ \ Winter 2017}{TA for CS 149 (Parallel Computing)}{Stanford University}{Stanford, CA}{} {}
+\cventry{Winter 2018}{TA for CS 149 (Parallel Computing)}{Stanford University}{Stanford, CA}{} {}
+\cventry{Winter 2017}{TA for CS 149 (Parallel Computing)}{Stanford University}{Stanford, CA}{} {}
+\cventry{Fall 2014}{TA for CS 168 (Undergraduate Networking)}{UC Berkeley}{Berkeley, CA}{} {}
 
-\cventry{\hspace{2em}\ \ Fall 2014}{TA for CS 168 (Undergraduate Networking)}{UC Berkeley}{Berkeley, CA}{} {
+\makeatletter
+\renewcommand\@biblabel[1]{\textbullet}
+\makeatother
+
+\bibliographystyle{unsrt}
+\nocite{*}
+\bibliography{cv}
+
+\section{Talks}
+
+\cventry{August 2018}{Evaluating End-to-End Optimization for Data Analytics Applications in Weld}{VLDB 2018}{Rio de Janeiro, Brazil}{} {}
+\cventry{August 2018}{Filter Before You Parse: Faster Analytics on Raw Data with Sparser}{VLDB 2018}{Rio de Janeiro, Brazil}{} {}
+\cventry{June 2018}{Sparser: Fast Analytics over Raw Data by Avoiding Parsing}{Spark$+$AI Summit}{San Francisco, CA}{} {}
+\cventry{April 2018}{Weld: Accelerating Data Science By 100$\times$}{DataEngConf SF}{San Francisco, CA}{} {}
+\cventry{January 2018}{DIY Hosting for Online Privacy}{Stanford NetSeminar}{Stanford, CA}{} {}
+\cventry{November 2017}{DIY Hosting for Online Privacy}{HotNets 2017}{Palo Alto, CA}{} {}
+\cventry{October 2017}{Generating Fast Data Planes for Data-Intensive Systems}{HPTS 2017}{Asilomar, CA}{} {}
+\cventry{September 2017}{Weld: Accelerating Data Science By 100$\times$}{Strate Data Conference}{New York, NY}{} {}
+\cventry{March 2017}{Weld: An Optimizing Runtime for High-Performance Data Analytics}{Strata$+$HadoopWorld}{San Jose, CA}{} {}
+\cventry{January 2017}{Weld: A Common Runtime for Data Analytics}{Stanford Platform Lab Seminar}{Stanford, CA}{} {}
+
+\section{Industry Experience}
+
+\cventry{Summer 2018}{Software Engineering Intern}{Databricks Inc.}{San Francisco, CA}{} {
 \begin{itemize}
-\item Taught about 50 students in a weekly discussion section.
-\item Designed problem sets, graded exams, and co-managed two projects involving
-building an application-layer firewall in Python.
+\item Worked on prototyping a new native code generation engine in Apache Spark.
 \end{itemize}
 }
-
-\section{Professional Experience}
 
 \cventry{Summer 2016}{SWE Intern}{Google Inc.}{Mountain View, CA}{} {
 \begin{itemize}
@@ -204,19 +226,26 @@ Twitter, and Flickr image search.
 }
 
 \section{Honors and Awards}
-\cventry{2016}{NSF GRFP Honorable Mention}{}{}{} {}
+\cventry{2016}{NSF GRFP Honorable Mention}{}{}{}{}
 \cventry{2015--2016}{Jacobs Presedential Fellowship}{}{}{} {}
 
-\section{Publications}
-\nociteconference{*}
-\bibliographystyleconference{plainyr-rev}
-\bibliographyconference{conference}
-
-\nocitetrs{*}
-\bibliographystyletrs{plainyr-rev}
-\bibliographytrs{tr}
 
 \section{References}
-Available upon request.
+\cvdoublecolumn{\cvreference{Matei Zaharia}
+    {Department of Computer Science}
+    {Stanford University}
+    {353 Serra Mall}
+    {Stanford, CA 94035}
+    {matei@cs.stanford.edu}
+    {}
+    }
+    {\cvreference{Peter Bailis}
+    {Department of Computer Science}
+    {Stanford University}
+    {353 Serra Mall}
+    {Stanford, CA 94035}
+    {pbailis@cs.stanford.edu}
+    {}
+    }
 
 \end{document}
